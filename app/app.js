@@ -10,6 +10,8 @@ const home = require('./src/routes/home');
 app.set('views', './src/views');
 app.set('views engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
+//익스프레스에서 정적 파일을 읽어올 때 사용하는 메서드
+app.use(express.static(`${__dirname}/src/public`))
 
 
 //라우터에 있는걸 가져온다(미들웨어를 사용하는 곳)
