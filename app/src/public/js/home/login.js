@@ -1,7 +1,7 @@
 //const id = document.querySelector('선택자')
 const id = document.querySelector('#id'),
     pword = document.querySelector('#pw'),
-    loginb = document.querySelector('button');
+    loginb = document.querySelector('.sub');
 
 //console.log(id);
 

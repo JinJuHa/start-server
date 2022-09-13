@@ -16,6 +16,9 @@ const output = {
     login : (req, res)=>{
         res.render('home/login.html')
     },
+    register : (req, res)=>{
+        res.render('home/register.html')
+    },
 }
 
 const process = {
