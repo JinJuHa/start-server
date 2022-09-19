@@ -4,6 +4,7 @@
 //     pw : ["1234" , "2468" , "1705"]
 // }
 
+const { response } = require('express')
 const User = require('../../models/user')
 //const Userstorage = require('../../models/Userstorage')
 
@@ -24,9 +25,8 @@ const output = {
 const process = {
     login : (req, res)=>{
         const user = new User(req.body);
-        const respones = user.login();
-        return res.json(respones);
-
+        const response = user.login();
+        return res.json(response);
 
         //console.log(req.body);
     //     const id = req.body.id,
@@ -37,24 +37,29 @@ const process = {
     // const users = Userstorage.getUsers("id" , "pw");
     // //console.log(users);
     // //    //console.log(id, pw);
-    //     const respones = {};
+    //     const response = {};
     //    if(users.id.includes(id)){
     //     const idx = users.id.indexOf(id);
     //     if(users.pw[idx] === pw){
-    //         respones.success = true;
-    //         return res.json(respones);
+    //         response.success = true;
+    //         return res.json(response);
     //     }
     //    }
 
-    //    respones.success = false;
-    //    respones.msg = "로그인에 실패 하셨습니다.";
-    //    return res.json(respones);
+    //    response.success = false;
+    //    response.msg = "로그인에 실패 하셨습니다.";
+    //    return res.json(response);
 
     // //    return res.json({
     // //     success : false,
     // //     msg: "로그인에 실패 하셨습니다."
     // //    })
        
+    },
+    register : (req, res) => {
+        const user = new User(req.body);
+        const response = user.register();
+        return res.json(response);
     },
 }
 
@@ -64,5 +69,5 @@ module.exports = {
 }
 
 // const user = new User(req.body);
-// const respones = user.login();
-// return res.json(respones);
+// const response = user.login();
+// return res.json(response);

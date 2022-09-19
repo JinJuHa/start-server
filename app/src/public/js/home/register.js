@@ -12,13 +12,16 @@ const id = document.querySelector('#id'),
 registerb.addEventListener("click", register);
 
 function register() {
+    if(pw.value !== pwordConfirm.value){
+        alert('비밀번호가 일치하지 않습니다.')
+    }
     const req = {
         id : id.value,
         name: namei.value,
+        email : email.value,
         pw : pword.value,
-        pwordConfirm : pwordConfirm.value
     };
-    //console.log(req);
+    console.log(req);
     //console.log( JSON.stringify(req));
 
     fetch('/register', {

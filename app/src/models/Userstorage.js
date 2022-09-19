@@ -4,6 +4,7 @@ class Userstorage {
         id : ["jjhh" , "개발자", "나사원"],
         pw : ["1234" , "2468" , "1705"],
         name : [" 진주하" , "진권영" , "나희도"],
+        email : ["jjhh321@gmail.com", "gin@gmail.com", "gon@gmail.com"],
     }
 
     static getUsers(...fields){
@@ -28,6 +29,17 @@ class Userstorage {
         }, {});
 
         return userInfo;
+    }
+
+    // 일회용처럼 데이터 저장하기
+    static save(userInfo) {
+        const users = this.#users;
+        users.id.push(userInfo.id);
+        users.name.push(userInfo.name);
+        users.email.push(userInfo.email);
+        users.pw.push(userInfo.pw);
+        return { success : true };
+        //console.log(users);
     }
 }
 
